@@ -27,9 +27,9 @@ public:
             TreeNode* cur = q.front();
             q.pop();
             if( cur->left ){
-                if( !cur->left->left && !cur->left->right )
-                    ans += cur->left->val;
                 q.push( cur->left );
+                if( !(cur->left->left) && !(cur->left->right) )
+                    ans += cur->left->val;
             }
             if( cur->right )
                 q.push( cur->right );
